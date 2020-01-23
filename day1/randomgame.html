@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let comNum = Math.floor(Math.random()*100);
+        for(var i=0; i<10000; i++){
+            let userNum = Number(prompt("숫자입력:"+i));
+            if(comNum>userNum){
+                alert("더 큰수를 입력해");
+            }else if(comNum<userNum){
+                alert("더 작은수를 입력해");
+            }else{
+                alert("정답" + comNum);
+                break;
+            }
+        }
+
+    </script>
+</head>
+<body>  
+</body>
+</html>
+			

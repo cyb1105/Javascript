@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let Hello = "안녕하세요.";
+
+        console.log(Hello);
+        console.log(Hello.indexOf("안녕")); //0번째 위치부터 존재
+        console.log(Hello.indexOf("하세요")); // 2번째 위치부터 존재
+        console.log(Hello.indexOf("채윤병")); //존재 X
+
+        let str= prompt("입력");
+        let n = str.indexOf("안녕");
+        let s = str.indexOf("잘자");
+
+        if(n >= 0 ){
+            alert("안녕하세요");
+        }else if(s >= 0){
+            alert("안녕히주무세요");
+        }
+        
+    </script>
+</head>
+<body>  
+</body>
+</html>
+			

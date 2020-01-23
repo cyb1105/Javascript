@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let willEval = "";
+        willEval += "var number=10;";
+        willEval += "console.log(number);";
+
+        eval(willEval);
+
+        let func1 =function(){
+            console.log("hello w");
+        }
+
+        let func2 =() => {
+            console.log("hello wd");
+        }
+
+        func1();
+        func2();
+    </script>
+</head>
+<body>  
+</body>
+</html>			
