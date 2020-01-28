@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function student(name,kor,math,eng){
+            this.이름 = name;
+            this.국어 = kor;
+            this.영어 = eng;
+            this.수학 = math;
+
+            this.sum =function(){
+                return this.국어+this.영어+this.수학;
+            };
+            this.avg = function(){
+                return this.sum()/3;
+            }
+
+        }
+        let students=[]; //배열 데이터
+        students.push(new student('AAA',280,0,0,))
+        students.push(new student('BBB',71,46,87))
+        students.push(new student('CCC',71,46,87))
+        students.push(new student('DDD',71,46,87))
+        students.push(new student('EEE',71,46,87))
+        //pop함수 사용
+        //console.log(students.pop())
+        // students.push({이름:'AAA', 국어:90 , 수학:83, 영어:95});
+        // students.push({이름:'BBB', 국어:90 , 수학:83, 영어:95});
+        // students.push({이름:'CCC', 국어:90 , 수학:83, 영어:95});
+        // students.push({이름:'DDD', 국어:90 , 수학:83, 영어:95});
+        // students.push({이름:'EEE', 국어:90 , 수학:83, 영어:95});
+        //각각 총점 및 평균 구하기
+        // for(let i in students){
+        //     // students[i].sum = students[i].국어+ students[i].수학 + students[i].영어; 
+        //     // students[i].avg = students[i].sum/3;
+        //     students[i].sum = function(){
+        //         return this.국어+this.수학 +this.영어;
+        //     };
+        //     students[i].avg = function(){
+        //         return students[i].sum()/3;            }
+        // }
+
+        // totalsum=0;
+        // students.sort(function(left,right){
+        //     return right.sum() -left.sum();
+        // });
+        // for(let i in students){
+        //     with(students[i]){
+        //         console.log(이름 + ":"+sum()+"/"+avg());
+        //         totalsum += sum();
+        //     }
+        // }
+        function myFilter(element,index,array){
+              return element.sum() >= 250;
+            };
+
+        let highGroup = students.filter(myFilter);
+        highGroup.forEach(function(element){
+            console.log(element.이름 + "/" + element.sum());
+        });
+        //전체평균 구하기
+        // console.log("전체 평균:"+(totalsum/students.length/3));
+    </script>
+</head>
+<body>  
+</body>
+</html>			

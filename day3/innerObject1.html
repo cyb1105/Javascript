@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        let primtiviNumber =273; // 속성, 메소드 추가 X
+        let objectNumber = new Number(273); //속성, 메소드를 추가O
+        Number.prototype.sum = function(){
+            return "Method on Prototype";
+        }
+        
+        console.log("primtive:"+primtiviNumber);
+        console.log("Object:"+ objectNumber+ "/"+objectNumber.sum());
+        
+        let myObject1 = new Object();
+        let myObject2 = {};
+        //myobject 속성 or myobject2 메소드 이름
+        console.log(myObject1);
+        console.log(myObject1.toString());
+
+        //tostring()제정의 (overriding,함수의 내용을 재정의)
+        let student = {
+            name : '홍길동',
+            grade : "1학년",
+            toString: function() {
+                return this.name + "/" + this.grade;
+            }
+        }
+
+        console.log("Student"+ student);
+    </script>
+</head>
+<body>  
+</body>
+</html>	
