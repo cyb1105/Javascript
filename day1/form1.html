@@ -16,7 +16,32 @@
                 if(selectCount == 0){
                 alert("sns를 선택하세요");
             }
-            //sns가 한개도 선택이 안된 경우에는 alert표시
+            let inputs =document.getElementsByTagName("input");
+            for(let i=0 ; i<inputs.length; i++ ){
+                console.log(inputs[i]);
+            }
+        }
+        window.onload = function(){
+            
+            let btnNext = document.getElementById("btnNext");
+            btnNext.onclick = function(){
+            let name = document.getElementById("txtName");    
+            let id = document.getElementById("txtId");
+            let pwd =document.getElementById("txtPwd");
+
+            if(name.value ==""){
+                alert("이름은 필수 입니다.");
+                return;
+            }
+            if(id.value ==""){
+                alert("아이디은 필수 입니다.");
+                return;
+            }
+            if(pwd.value ==""){
+                alert("비밀번호는 필수 입니다.");
+                return;
+            }
+        }
         }
     
     </script>
@@ -29,9 +54,10 @@
                 웹 브라우저 -> url요청    
         -->
         <form action="regist.html" method="GET"> <!-- 반드시 action태그가 필요-->
-            이름 : <input type="text" placeholder="이름을 입력하세요" name="name" > <br/>
-            아이디 : <input type="text" placeholder="아이디를 입력하세요" name="id"><br/>
-            비밀번호 : <input type="password" placeholder="비밀번호를 입력하세요" name=" pwd"><br/>
+            <div>*는 필수 입력</div>
+            * 이름 : <input type="text" id="txtName" placeholder="이름을 입력하세요" name="name" > <br/>
+            * 아이디 : <input type="text" id="txtId" placeholder="아이디를 입력하세요" name="id"><br/>
+            * 비밀번호 : <input type="password" id="txtPwd" placeholder="비밀번호를 입력하세요" name=" pwd"><br/>
             남성 : <input type="radio" name="gender">
             여성 : <input type="radio" name="gender"><br/>  
             사용하는 sns:
@@ -50,7 +76,7 @@
             자기소개:
             <textarea cols="40" rows="5" name="intro"></textarea><br/>
             <input type="submit" value="회원가입">
-            <input type="reset" value="초기화">
+            <input type="button" value="다음단계" id="btnNext"> 
             <input type="button" value="임시 저장" onclick="saveTemporary()">
         </form>
     </body>

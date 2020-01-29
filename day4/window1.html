@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+
+        console.log(navigator.appCodeName);
+        console.log(navigator.appName);
+        console.log(navigator.appVersion);
+        console.log(navigator.platform);
+        console.log(navigator.userAgent);
+
+        function myOpen(url){
+            window.open(url, '_blank', 'width=100,height=100');
+
+        }
+        function myLocation(url){
+            location.href="https://www.multicampus.com";
+
+        }
+
+    </script>
+</head>
+<body>  
+    <li><button onclick="myOpen('https://www.naver.com')">Naver</button></li>
+    <li><button onclick="myOpen('https://www.Daum.net')">Daum</button></li>
+    <li><button onclick="myLocation()">멀캠</button></li>
+</body>
+</html>	
