@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <script>
+    
+        function saveTemporary(){
+            //선택된 sns값 
+            let selectedSns = document.getElementsByName("sns");
+            let selectCount = 0;
+            for(let i=0; i<selectedSns.length; i++){
+                if(selectedSns[i].checked){
+                selectCount ++;
+                console.log(selectedSns[i].value);
+                }
+            }
+                if(selectCount == 0){
+                alert("sns를 선택하세요");
+            }
+            //sns가 한개도 선택이 안된 경우에는 alert표시
+        }
+    
+    </script>
+</head>
     <body> <!-- POST/GET OPTION/PUT/DELETE/TRACE/-->
         <!-- POST/GET
             POST -> 사용자가 입력한 내용을 -> 서버에 전달(가입, 저장)
@@ -14,10 +35,10 @@
             남성 : <input type="radio" name="gender">
             여성 : <input type="radio" name="gender"><br/>  
             사용하는 sns:
-            <input type="checkbox" name="sns"> Facebook
-            <input type="checkbox" name="sns"> instagram
-            <input type="checkbox" name="sns"> kakaotalk
-            <input type="checkbox" name="sns"> google+ <br/>
+            <input type="checkbox" name="sns" value="facebook"> Facebook
+            <input type="checkbox" name="sns" value="instagram"> instagram
+            <input type="checkbox" name="sns" value="kakaotalk"> kakaotalk
+            <input type="checkbox" name="sns" value="google"> google+ <br/>
             연령:
             <select name="age">
                 <option value="10">10대</option>
@@ -30,7 +51,7 @@
             <textarea cols="40" rows="5" name="intro"></textarea><br/>
             <input type="submit" value="회원가입">
             <input type="reset" value="초기화">
-            <input type="button" value="임시 저장">
+            <input type="button" value="임시 저장" onclick="saveTemporary()">
         </form>
     </body>
 </html>
