@@ -14,7 +14,7 @@
                   + item.weather[0].icon +"@2x.png";
 
           let _divhtml = item.dt_txt;
-          _divhtml += ", 기온:" + item.main.temp;
+          _divhtml += "기온:" + item.main.temp;
           _divhtml += " <span style='color:blue;'>" + item.main.temp_min + "</span>";
           _divhtml += "/<span style='color:red;'>" + item.main.temp_max + "</span>";
           _divhtml += ", " + item.weather[0].description;
